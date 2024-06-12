@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --Gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%);
+    --Pale-Blue: hsl(243, 100%, 93%);
+    --Grayish-Blue: hsl(229, 7%, 55%);
+    --Dark-Blue: hsl(228, 56%, 26%);
+    --Very-Dark-Blue: hsl(229, 57%, 11%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Raleway", sans-serif;
+    background-image: url(/images/bg-desktop.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100% 50%;
+    background-color: var(--Very-Dark-Blue);
+}
+
+.container {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+.logo-folder {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 2.5rem;
+    background-color: var(--Dark-Blue);
+    width: 300px;
+    padding: 30px;
+    border-radius: 10px 40% 10px 10px;
+}
+
+.logo {
+    width: 100px;
+}
+
+.folders {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.folders div {
+    width: 40px;
+    height: 40px;
+    background-color: var(--Very-Dark-Blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+/* *****************DETAILS************* */
+
+.details {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: var(--Pale-Blue);
+    gap: 20px;
+    text-align: center;
+    background-color: var(--Dark-Blue);
+    padding: 35px 25px;
+    position: relative;
+    border-radius: 10px;
+    width: 450px;
+}
+
+.status {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.text {
+    text-align: left;
+    width: 100%;
+    font-size: 14px;
+}
+
+.text span {
+    font-weight: 700;
+}
+
+.tag {
+    background-color: var(--Pale-Blue);
+    color: var(--Very-Dark-Blue);
+    padding: 10px 10px;
+    border-radius: 7px 7px 0px ;
+    position: absolute;
+    top: -20px;
+    right: 30px;
+}
+
+.tag::before {
+    border-bottom: 10px solid transparent;
+    border-left: 10px sollid transparent;
+    border-right: 10px solid var(--Pale-Blue);
+    border-top: 10px solid var(--Pale-Blue);
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 38px;
+}
+
+
+.memory-left {
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+
+.gb-left {
+    font-weight: 400;
+    font-size: 12px;
+}
+
+
+
+.status-container {
+    height: 14px;
+    width: 100%;
+    background-color: var(--Very-Dark-Blue);
+    border-radius: 7px;
+    padding: 4px 0px;
+}
+
+.status-color {
+    height: 10px;
+    width: 70%;
+    background-image: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+    display: flex;
+    align-items: center;
+    padding: 1px;
+    border-radius: 5px;
+    position: absolute;
+    top: 73px;
+    left: 28px;
+}
+
+.spot {
+    width: 9px;
+    height: 9px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    right: 2px;
+}
+
+.memory {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.memory small {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+@media screen and (max-width: 600px) {
+
+    body {
+        background-image: url(/images/bg-mobile.png);
+        background-position: center;
+        background-size: cover;
+    }
+    
+    .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .details, .logo-folder {
+        width: 300px;
+        position: relative;
+    }
+
+    .tag {
+        padding: 15px;
+        border-radius: 7px;
+        position: absolute;
+        top: 110px;
+        right: 90px;
+    }
+
+    .tag::before {
+        display: none;
+    }
+
+    .status-color {
+        top: 73px;
+        left: 28px;
+    }
+    
+    .spot {
+        top: 1px;
+        right: 1px;
+    }
+}
